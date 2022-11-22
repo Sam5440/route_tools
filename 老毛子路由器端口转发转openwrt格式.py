@@ -24,12 +24,11 @@ demo_str = """config redirect
 	option dest 'lan'
 	list src_mac 'main_mac'
 """
-# 主路由mac地址
+# 主路由mac地址,需要指定,不然会转发这个端口全部的流量,
 main_mac = "5C:02:14:5D:4A:7E"
 demo_str = demo_str.replace('main_mac', main_mac)   
 result = ""
 for s in VSList:
-    # ["8097", "192.168.123.77", "", "TCP", "", "", "emby"],
     out_port = s[0]
     inner_ip = s[1]
     inner_port = s[2] if s[2] else out_port
