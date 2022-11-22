@@ -22,8 +22,11 @@ demo_str = """config redirect
 	option name 'server_name'
 	option src 'lan'
 	option dest 'lan'
-
+	list src_mac 'main_mac'
 """
+# 主路由mac地址
+main_mac = "5C:02:14:5D:4A:7E"
+demo_str = demo_str.replace('main_mac', main_mac)   
 result = ""
 for s in VSList:
     # ["8097", "192.168.123.77", "", "TCP", "", "", "emby"],
